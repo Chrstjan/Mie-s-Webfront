@@ -1,2 +1,2 @@
-# Html-Boilerplate
-A Html Boilerplate
+#Miés Webfront
+A sketchy webshop (clone of Temu)
