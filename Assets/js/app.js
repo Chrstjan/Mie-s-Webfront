@@ -1,5 +1,6 @@
 //GLOBALS
 const productsContainer = document.getElementById("product-container");
+const headerContainer = document.getElementById("main-header");
 const domBody = document.body;
 
 let allProducts = null;
@@ -18,8 +19,7 @@ function getCategoryData() {
       return response.json();
     })
     .then((json) => {
-      //recivedCategoryData(json);
-      console.log(json);
+      recivedCategoryData(json);
     })
     .catch((error) => {
       console.log("Error fetching category data:", error);
@@ -35,10 +35,49 @@ function getProductData() {
       return response.json();
     })
     .then((json) => {
-      //recivedProductData(json);
-      console.log(json);
+      recivedProductData(json);
     })
     .catch((error) => {
       console.log("Error fetching product data:", error);
     });
+}
+
+//Controller Code
+function recivedCategoryData(categoryData) {
+  console.log(categoryData);
+
+  buildNavbar(categoryData);
+}
+
+function recivedProductData(productData) {
+  console.log(productData);
+}
+
+//View Code
+function buildNavbar(categoryData) {
+  const mainNav = document.createElement("nav");
+  mainNav.classList.add("main-nav");
+
+  let randCategory = "";
+
+  const topNavigation = `
+    <div class="topContainer">
+        <input class="search-bar" type="text" placeholder="${randCategory}" />
+        <span class="search-bar-icon">&#128247;</span>
+        <span class="search-bar-icon">&#128269;</span>
+    </div>
+    `;
+
+  mainNav.innerHTML += topNavigation;
+
+  headerContainer.appendChild(mainNav);
+
+  function updateCategory() {
+    const randCategoryIndex = Math.floor(Math.random() * categoryData.length);
+    randCategory = `${categoryData[randCategoryIndex]}`;
+    document.querySelector(".search-bar").placeholder = randCategory;
+  }
+
+  updateCategory();
+  setInterval(updateCategory, 3000);
 }
