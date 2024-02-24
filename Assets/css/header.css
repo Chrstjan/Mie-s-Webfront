@@ -1,0 +1,47 @@
+#main-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 1rem;
+  background: #fdda0d;
+}
+
+.topContainer {
+  position: relative;
+}
+
+.main-nav .topContainer .search-bar {
+  width: 80%;
+  height: 3.7%;
+  position: fixed;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+}
+
+.search-bar::placeholder {
+  padding-left: 0.5rem;
+}
+
+.topContainer .icons-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 0.7rem;
+  position: absolute;
+  right: 10%;
+  transform: translate(38vw);
+}
+
+.topContainer .search-bar-icon {
+  display: block;
+  margin-top: 0.2rem;
+}
+
+.search-bar-icon:last-of-type {
+  background: #333;
+  color: #fff;
+  padding: 0.1rem 0.5rem;
+  border-radius: 20px;
+  text-align: center;
+}

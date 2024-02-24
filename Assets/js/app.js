@@ -63,8 +63,10 @@ function buildNavbar(categoryData) {
   const topNavigation = `
     <div class="topContainer">
         <input class="search-bar" type="text" placeholder="${randCategory}" />
-        <span class="search-bar-icon">&#128247;</span>
-        <span class="search-bar-icon">&#128269;</span>
+        <div class="icons-container">
+            <span class="search-bar-icon">&#128247;</span>
+            <span class="search-bar-icon">&#128269;</span>
+        </div>
     </div>
     `;
 
