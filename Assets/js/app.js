@@ -53,6 +53,10 @@ function recivedProductData(productData) {
   console.log(productData);
 }
 
+function displayCategoryProducts(clickedCategory) {
+  console.log(clickedCategory);
+}
+
 //View Code
 function buildNavbar(categoryData) {
   const mainNav = document.createElement("nav");
@@ -72,7 +76,22 @@ function buildNavbar(categoryData) {
 
   mainNav.innerHTML += topNavigation;
 
+  const categoryNavigation = document.createElement("nav");
+  categoryNavigation.classList.add("category-nav");
+
+  const mainNavList = document.createElement("ul");
+  mainNavList.classList.add("category-nav-list");
+
+  categoryData.forEach((category) => {
+    const navigation = `<li class="category-list"><button onclick="displayCategoryProducts('${category}')">${category}</button></li>`;
+
+    mainNavList.innerHTML += navigation;
+  });
+
+  categoryNavigation.appendChild(mainNavList);
+
   headerContainer.appendChild(mainNav);
+  headerContainer.appendChild(categoryNavigation);
 
   function updateCategory() {
     const randCategoryIndex = Math.floor(Math.random() * categoryData.length);

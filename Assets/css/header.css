@@ -1,7 +1,9 @@
 #main-header {
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
   padding-top: 1rem;
   background: #fdda0d;
 }
@@ -29,8 +31,8 @@
   align-items: center;
   gap: 0.7rem;
   position: absolute;
-  right: 10%;
-  transform: translate(38vw);
+  right: 30%;
+  transform: translate(20vw);
 }
 
 .topContainer .search-bar-icon {
@@ -44,4 +46,15 @@
   padding: 0.1rem 0.5rem;
   border-radius: 20px;
   text-align: center;
+}
+
+#main-header .category-nav .category-nav-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.category-nav-list li {
+  list-style-type: none;
 }
