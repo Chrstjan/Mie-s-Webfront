@@ -90,8 +90,11 @@ function buildNavbar(categoryData) {
 
   categoryNavigation.appendChild(mainNavList);
 
+  const bottomHeader = `<figure class="header-banner"><img src="./Assets/images/Temu.png" alt="header banner"></figure>`;
+
   headerContainer.appendChild(mainNav);
   headerContainer.appendChild(categoryNavigation);
+  headerContainer.innerHTML += bottomHeader;
 
   function updateCategory() {
     const randCategoryIndex = Math.floor(Math.random() * categoryData.length);

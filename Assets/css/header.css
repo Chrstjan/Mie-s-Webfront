@@ -80,3 +80,7 @@
   text-transform: capitalize;
   font-size: 13px;
 }
+
+#main-header .header-banner img {
+  width: 100%;
+}
